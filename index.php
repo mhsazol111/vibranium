@@ -9,7 +9,9 @@ get_header() ?>
     <div id="vbm__main-content">
         <?php while( have_posts() ) : the_post(); ?>
             <div class="container">
-                <?php the_content(); ?> <h1>index.php</h1>
+                <?php 
+                    get_template_part( 'template-parts/post/content', get_post_format() );
+                ?>
             </div>
         <?php endwhile; ?>
         <?php get_sidebar(); ?>

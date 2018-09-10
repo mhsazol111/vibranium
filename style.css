@@ -10,3 +10,10 @@ License URI: http://www.gnu.org/license/gpl-2.0.html
 Tags: one, two
 Text Domain: vibranium
 */
+
+.vbm__box_layout {
+    width: 1200px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}

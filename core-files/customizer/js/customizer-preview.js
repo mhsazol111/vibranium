@@ -87,14 +87,18 @@
 		});
 	});
 
-	wp.customize( 'vbm__box_layout_setting', function( value ) {
+	wp.customize( 'vbm__box_width_setting', function( value ) {
 		value.bind( function( to ) {
-			if ( to == 1 ) {
-				$('#vbm__page-container').addClass( 'vbm__box_layout' );
-			} else {
-				$('#vbm__page-container').removeClass( 'vbm__box_layout' );
-			}
-		} );
+			$('#vbm__page-container').css({
+				'margin-left': 'auto',
+				'margin-right': 'auto',
+				'box-shadow': '0 0 10px rgba(0,0,0,.2)',
+				'max-width': parseInt(to) + 100 + 'px',
+			});
+		});
+		value.bind(function (to) {
+			$('#vbm__page-container .container').css( 'max-width', to + 'px' );
+		});
 	});
 	
 })( jQuery );

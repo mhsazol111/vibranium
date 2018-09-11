@@ -17,7 +17,8 @@
     <body <?php body_class(); ?>>
 
         <!-- Page Container started -->
-        <div id="vbm__page-container">
+        <?php $box_layout = get_theme_mod( 'vbm__box_layout_setting', 0 ); ?>
+        <div id="vbm__page-container" class="<?php echo ( $box_layout == 1 ) ? 'vbm__box_layout' : 'vbm__fullwidth_layout' ?>">
 
             <!-- Header Area Started -->
             <div id="vbm__top-header">

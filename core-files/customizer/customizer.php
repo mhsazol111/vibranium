@@ -4,7 +4,7 @@
  * Using customizer api
  */
 
-require get_theme_file_path( 'core-files/customizer/customizer-range-control.php' );
+require get_theme_file_path( 'core-files/customizer/customizer-controls.php' );
 
 function vibranium_customize_register($wp_customize) {
     /** =========================================
@@ -30,6 +30,51 @@ function vibranium_customize_register($wp_customize) {
         'section'     => 'vbm__site_layout',
         'settings'    => 'vbm__box_layout_setting',
         'type'        => 'checkbox',
+    )));
+
+    $wp_customize->add_setting( 'vbm__box_width_setting', array(
+        'title'     => esc_html__( 'Box Layout Width (max-width)', 'vibranium' ),
+        'default'   => '1200',
+        'transport' => 'postMessage'
+    ));
+    $wp_customize->add_control( new Vibranium_Range_Option( $wp_customize, 'vbm__box_width', array(
+        'label'	      => esc_html__( 'Box Layout Width (max-width)', 'vibranium' ),
+        'section'     => 'vbm__site_layout',
+        'settings'    => 'vbm__box_width_setting',
+        'type'        => 'range',
+        'input_attrs' => array(
+            'min'  => 980,
+            'max'  => 1920,
+            'step' => 5
+        )
+    )));
+    $wp_customize->add_setting( 'vbm__custom_sidebar_setting', array(
+        'title'     => esc_html__( 'Custom Sidebar Width', 'vibranium' ),
+        'default'   => 0,
+        'transport' => 'postMessage'
+    ));
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'vbm__custom_sidebar', array(
+        'label'	      => esc_html__( 'Custom Sidebar Width', 'vibranium' ),
+        'section'     => 'vbm__site_layout',
+        'settings'    => 'vbm__custom_sidebar_setting',
+        'type'        => 'checkbox',
+    )));
+
+    $wp_customize->add_setting( 'vbm__custom_sidebar_width_setting', array(
+        'title'     => esc_html__( 'Sidebar Width', 'vibranium' ),
+        'default'   => '27',
+        'transport' => 'postMessage'
+    ));
+    $wp_customize->add_control( new Vibranium_Range_Option( $wp_customize, 'vbm__custom_sidebar_width', array(
+        'label'	      => esc_html__( 'Sidebar Width (%)', 'vibranium' ),
+        'section'     => 'vbm__site_layout',
+        'settings'    => 'vbm__custom_sidebar_width_setting',
+        'type'        => 'range',
+        'input_attrs' => array(
+            'min'  => 20,
+            'max'  => 35,
+            'step' => 1
+        )
     )));
     //=============== End of Site Layout ===========
 

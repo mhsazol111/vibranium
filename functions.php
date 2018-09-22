@@ -1,5 +1,14 @@
 <?php
 
+
+require_once get_theme_file_path( '/core-files/tgm-config.php' );
+require_once get_theme_file_path( '/core-files/csf/cs-framework.php' );
+require_once get_theme_file_path( '/core-files/csf-config.php' );
+//require get_theme_file_path( '/core-files/customizer/customizer.php' );
+require get_theme_file_path( '/core-files/widgets/widgets.php' );
+
+require get_theme_file_path( '/core-files/customizer/customizer-styles.php' );
+
 function vibranium_theme_setup() {
     load_theme_textdomain( 'vibranium' );
     add_theme_support( 'title-tag' );
@@ -40,7 +49,7 @@ add_action( 'wp_enqueue_scripts', 'vibranium_enqueue_assets' );
  * Enqueue script for custom customize control.
  */
 function vibranium_customizer_scripts() {
-    wp_enqueue_style( 'divi-customizer-controls-styles', get_theme_file_uri( '/core-files/customizer/css/customizer-styles.css' ), array(), '1.0' );
+    // wp_enqueue_style( 'divi-customizer-controls-styles', get_theme_file_uri( '/core-files/customizer/css/customizer-styles.css' ), array(), '1.0' );
     wp_enqueue_script( 'customizer-controls-js', get_theme_file_uri( '/core-files/customizer/js/customizer-controls.js' ), array('jquery', 'customize-controls'), false, true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'vibranium_customizer_scripts' );
@@ -51,12 +60,3 @@ function vibranium_customizer_live_preview() {
     wp_enqueue_script( 'vibranium-theme-customizer', get_theme_file_uri( '/core-files/customizer/js/customizer-preview.js' ), array('jquery', 'customize-preview'), '1.0', true );
 }
 add_action( 'customize_preview_init', 'vibranium_customizer_live_preview' );
-
-//================== Widget Areas ==================//
-require get_theme_file_path( '/core-files/widgets/widgets.php' );
-
-//================== TGM Plugin activation ==================//
-require_once get_theme_file_path( '/core-files/tgm-config.php' );
-
-//================== Customizer Options ==================//
-require get_theme_file_path( '/core-files/customizer/customizer.php' );

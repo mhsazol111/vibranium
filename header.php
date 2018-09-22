@@ -17,7 +17,7 @@
     <body <?php body_class(); ?>>
 
         <!-- Page Container started -->
-        <?php $box_layout = get_theme_mod( 'vbm__box_layout_setting', 0 ); ?>
+        <?php $box_layout = cs_get_customize_option( 'vbm__box_layout_switch', false ); ?>
         <div id="vbm__page-container" class="<?php echo ( $box_layout == 1 ) ? 'vbm__box_layout' : 'vbm__fullwidth_layout' ?>">
 
             <!-- Header Area Started -->
@@ -32,7 +32,7 @@
                         </a>
                     </div>
                     <div class="top-header-social">
-                        <a href="#" class="top-fb"><span class="fa fa-facebook"></span></a>
+                        <a href="<?php echo site_url() ?>" class="top-fb"><span class="fa fa-facebook"></span></a>
                         <a href="#" class="top-twitter"><span class="fa fa-twitter"></span></a>
                         <a href="#" class="top-insta"><span class="fa fa-instagram"></span></a>
                         <a href="#" class="top-linked"><span class="fa fa-linkedin"></span></a>

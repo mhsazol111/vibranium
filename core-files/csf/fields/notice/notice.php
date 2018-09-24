@@ -15,9 +15,9 @@ class CSFramework_Option_notice extends CSFramework_Options {
 
   public function output() {
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
     echo '<div class="cs-notice cs-'. $this->field['class'] .'">'. $this->field['content'] .'</div>';
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

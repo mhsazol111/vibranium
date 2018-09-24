@@ -254,10 +254,10 @@ function vibranium_customize_register($wp_customize) {
         'settings'    => 'vbm__header_font_weight_setting',
         'type'        => 'select',
         'choices'     => array(
-            '300'         => esc_html__( 'Light', 'Divi' ),
-            'normal'      => esc_html__( 'Regular', 'Divi' ),
-            '600'         => esc_html__( 'Semi Bold', 'Divi' ),
-            'bold'        => esc_html__( 'Bold', 'Divi' ),
+            '300'         => esc_html__( 'Light', 'vibranium' ),
+            'normal'      => esc_html__( 'Regular', 'vibranium' ),
+            '600'         => esc_html__( 'Semi Bold', 'vibranium' ),
+            'bold'        => esc_html__( 'Bold', 'vibranium' ),
         ),
     )));
     $wp_customize->add_setting( 'vbm__header_font_style_setting', array(
@@ -271,8 +271,8 @@ function vibranium_customize_register($wp_customize) {
         'settings'    => 'vbm__header_font_style_setting',
         'type'        => 'select',
         'choices'     => array(
-            'normal'         => esc_html__( 'Normal', 'Divi' ),
-            'italic'         => esc_html__( 'Italic', 'Divi' ),
+            'normal'         => esc_html__( 'Normal', 'vibranium' ),
+            'italic'         => esc_html__( 'Italic', 'vibranium' ),
         ),
     )));
     $wp_customize->add_setting( 'vbm__body_text_color_setting', array(

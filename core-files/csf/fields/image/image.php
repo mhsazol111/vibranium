@@ -15,11 +15,11 @@ class CSFramework_Option_Image extends CSFramework_Options {
 
   public function output(){
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
 
     $preview = '';
     $value   = $this->element_value();
-    $add     = ( ! empty( $this->field['add_title'] ) ) ? $this->field['add_title'] : esc_html__( 'Add Image', 'cs-framework' );
+    $add     = ( ! empty( $this->field['add_title'] ) ) ? $this->field['add_title'] : esc_html__( 'Add Image', 'vibranium' );
     $hidden  = ( empty( $value ) ) ? ' hidden' : '';
 
     if( ! empty( $value ) ) {
@@ -31,7 +31,7 @@ class CSFramework_Option_Image extends CSFramework_Options {
     echo '<a href="#" class="button button-primary cs-add">'. $add .'</a>';
     echo '<input type="text" name="'. $this->element_name() .'" value="'. $this->element_value() .'"'. $this->element_class() . $this->element_attributes() .'/>';
 
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

@@ -15,14 +15,14 @@ class CSFramework_Option_Sorter extends CSFramework_Options {
 
   public function output(){
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
 
     $value          = $this->element_value();
     $value          = ( ! empty( $value ) ) ? $value : $this->field['default'];
     $enabled        = ( ! empty( $value['enabled'] ) ) ? $value['enabled'] : array();
     $disabled       = ( ! empty( $value['disabled'] ) ) ? $value['disabled'] : array();
-    $enabled_title  = ( isset( $this->field['enabled_title'] ) ) ? $this->field['enabled_title'] : esc_html__( 'Enabled Modules', 'cs-framework' );
-    $disabled_title = ( isset( $this->field['disabled_title'] ) ) ? $this->field['disabled_title'] : esc_html__( 'Disabled Modules', 'cs-framework' );
+    $enabled_title  = ( isset( $this->field['enabled_title'] ) ) ? $this->field['enabled_title'] : esc_html__( 'Enabled Modules', 'vibranium' );
+    $disabled_title = ( isset( $this->field['disabled_title'] ) ) ? $this->field['disabled_title'] : esc_html__( 'Disabled Modules', 'vibranium' );
 
     echo '<div class="cs-modules">';
     echo '<h3>'. $enabled_title .'</h3>';
@@ -47,7 +47,7 @@ class CSFramework_Option_Sorter extends CSFramework_Options {
     echo '</div>';
     echo '<div class="clear"></div>';
 
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

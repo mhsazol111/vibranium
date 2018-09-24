@@ -15,9 +15,9 @@ class CSFramework_Option_text extends CSFramework_Options {
 
   public function output(){
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
     echo '<input type="'. $this->element_type() .'" name="'. $this->element_name() .'" value="'. $this->element_value() .'"'. $this->element_class() . $this->element_attributes() .'/>';
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

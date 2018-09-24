@@ -1,3 +1,54 @@
+.text-center {
+    text-align: center;
+}
+#customize-controls .cs-element .cs-title h4 {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+#customize-controls .cs-field-content, #customize-controls .cs-field-notice .cs-notice {
+    margin-bottom: 5px;
+}
+#customize-controls .cs-element .cs-fieldset .cs-typography-family, #customize-controls .cs-element .cs-fieldset .cs-typography-variant {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+}
+#customize-controls .chosen-container.chosen-container-single {
+    overflow: hidden;
+    width: 100% !important;
+}
+.cs-element.cs-field-content {
+    background-color: #f6f6f6;
+}
+.cs-field-slider input {
+    display: inline-block;
+    width: 20%;
+}
+.cs-slider {
+    display: inline-block;
+    margin: 0 12% 0 0;
+    width: 67%;
+    vertical-align: super;
+}
+.cs-field-slider .ui-slider {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background: #E8E8E8;
+}
+.cs-field-slider .ui-slider-range {
+    background: #4fb845;
+    height: 5px;
+}
+.cs-field-slider .ui-slider-handle {
+    height: 14px;
+    width: 14px;
+    background: #3fc2e9;
+    position: absolute;
+    top: -5px;
+    border-radius: 100%;
+}
+
 /* h1,
 h2,
 h3,

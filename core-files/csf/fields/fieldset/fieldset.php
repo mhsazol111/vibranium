@@ -15,7 +15,7 @@ class CSFramework_Option_fieldset extends CSFramework_Options {
 
   public function output() {
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
 
     echo '<div class="cs-inner">';
 
@@ -36,7 +36,7 @@ class CSFramework_Option_fieldset extends CSFramework_Options {
 
     echo '</div>';
 
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

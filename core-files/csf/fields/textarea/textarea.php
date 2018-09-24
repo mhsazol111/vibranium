@@ -15,16 +15,16 @@ class CSFramework_Option_textarea extends CSFramework_Options {
 
   public function output() {
 
-    echo $this->element_before();
-    echo $this->shortcode_generator();
+    echo esc_attr( $this->element_before() );
+    echo esc_attr($this->shortcode_generator());
     echo '<textarea name="'. $this->element_name() .'"'. $this->element_class() . $this->element_attributes() .'>'. $this->element_value() .'</textarea>';
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 
   public function shortcode_generator() {
     if( isset( $this->field['shortcode'] ) && CS_ACTIVE_SHORTCODE ) {
-      echo '<a href="#" class="button button-primary cs-shortcode cs-shortcode-textarea">'. esc_html__( 'Add Shortcode', 'cs-framework' ) .'</a>';
+      echo '<a href="#" class="button button-primary cs-shortcode cs-shortcode-textarea">'. esc_html__( 'Add Shortcode', 'vibranium' ) .'</a>';
     }
   }
 }

@@ -15,7 +15,7 @@ class CSFramework_Option_select extends CSFramework_Options {
 
   public function output() {
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
 
     if( isset( $this->field['options'] ) ) {
 
@@ -39,7 +39,7 @@ class CSFramework_Option_select extends CSFramework_Options {
 
     }
 
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

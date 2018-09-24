@@ -15,9 +15,9 @@ class CSFramework_Option_heading extends CSFramework_Options {
 
   public function output() {
 
-    echo $this->element_before();
-    echo $this->field['content'];
-    echo $this->element_after();
+    echo esc_attr( $this->element_before() );
+    echo esc_attr( $this->field['content'] );
+    echo esc_attr( $this->element_after() );
 
   }
 

@@ -15,7 +15,7 @@ class CSFramework_Option_radio extends CSFramework_Options {
 
   public function output(){
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
 
     if( isset( $this->field['options'] ) ) {
 
@@ -36,7 +36,7 @@ class CSFramework_Option_radio extends CSFramework_Options {
       echo '<label><input type="radio" name="'. $this->element_name() .'" value="1"'. $this->element_class() . $this->element_attributes() . checked( $this->element_value(), 1, false ) .'/> '. $label .'</label>';
     }
 
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

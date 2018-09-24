@@ -17,8 +17,12 @@
     <body <?php body_class(); ?>>
 
         <!-- Page Container started -->
-        <?php $box_layout = cs_get_customize_option( 'vbm__box_layout_switch', false ); ?>
-        <div id="vbm__page-container" class="<?php echo ( $box_layout == 1 ) ? 'vbm__box_layout' : 'vbm__fullwidth_layout' ?>">
+        <?php $box_layout = cs_get_customize_option( 'vbm__site_layout_type', 'fullwidth' ); ?>
+        <?php if( $box_layout == 'fullwidth' ) : ?>
+        <div id="vbm__page-container" class="vbm__fullwidth_layout">
+        <?php elseif( $box_layout == 'boxed' ) : ?>
+        <div id="vbm__page-container" class="vbm__box_layout">
+        <?php endif; ?>
 
             <!-- Header Area Started -->
             <div id="vbm__top-header">

@@ -15,7 +15,7 @@ class CSFramework_Option_typography extends CSFramework_Options {
 
   public function output() {
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
 
     $defaults_value = array(
       'family'  => 'Arial',
@@ -70,13 +70,13 @@ class CSFramework_Option_typography extends CSFramework_Options {
 
       do_action( 'cs_typography_family', $family_value, $this );
 
-      echo '<optgroup label="'. esc_html__( 'Web Safe Fonts', 'cs-framework' ) .'">';
+      echo '<optgroup label="'. esc_html__( 'Web Safe Fonts', 'vibranium' ) .'">';
       foreach ( $websafe_fonts as $websafe_value ) {
         echo '<option value="'. $websafe_value .'" data-variants="'. implode( '|', $default_variants ) .'" data-type="websafe"'. selected( $websafe_value, $family_value, true ) .'>'. $websafe_value .'</option>';
       }
       echo '</optgroup>';
 
-      echo '<optgroup label="'. esc_html__( 'Google Fonts', 'cs-framework' ) .'">';
+      echo '<optgroup label="'. esc_html__( 'Google Fonts', 'vibranium' ) .'">';
       foreach ( $googlefonts as $google_key => $google_value ) {
         echo '<option value="'. $google_key .'" data-variants="'. implode( '|', $google_value ) .'" data-type="google"'. selected( $google_key, $family_value, true ) .'>'. $google_key .'</option>';
       }
@@ -104,11 +104,11 @@ class CSFramework_Option_typography extends CSFramework_Options {
 
     } else {
 
-      echo esc_html__( 'Error! Can not load json file.', 'cs-framework' );
+      echo esc_html__( 'Error! Can not load json file.', 'vibranium' );
 
     }
 
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

@@ -141,7 +141,7 @@ class CSFramework_Metabox extends CSFramework_Abstract{
 
         echo '</div>';
 
-        echo ( $has_nav ) ? '<div class="cs-nav-background"></div>' : '';
+        echo esc_html( ( $has_nav ) ? '<div class="cs-nav-background"></div>' : '' );
 
         echo '<div class="clear"></div>';
 

@@ -18,7 +18,7 @@ class CSFramework_Option_image_select extends CSFramework_Options {
     $input_type  = ( ! empty( $this->field['radio'] ) ) ? 'radio' : 'checkbox';
     $input_attr  = ( ! empty( $this->field['multi_select'] ) ) ? '[]' : '';
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
     echo ( empty( $input_attr ) ) ? '<div class="cs-field-image-select">' : '';
 
     if( isset( $this->field['options'] ) ) {
@@ -29,7 +29,7 @@ class CSFramework_Option_image_select extends CSFramework_Options {
     }
 
     echo ( empty( $input_attr ) ) ? '</div>' : '';
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 

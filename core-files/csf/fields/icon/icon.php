@@ -15,19 +15,19 @@ class CSFramework_Option_icon extends CSFramework_Options {
 
   public function output() {
 
-    echo $this->element_before();
+    echo esc_attr( $this->element_before() );
 
     $value  = $this->element_value();
     $hidden = ( empty( $value ) ) ? ' hidden' : '';
 
     echo '<div class="cs-icon-select">';
     echo '<span class="cs-icon-preview'. $hidden .'"><i class="'. $value .'"></i></span>';
-    echo '<a href="#" class="button button-primary cs-icon-add">'. esc_html__( 'Add Icon', 'cs-framework' ) .'</a>';
-    echo '<a href="#" class="button cs-warning-primary cs-icon-remove'. $hidden .'">'. esc_html__( 'Remove Icon', 'cs-framework' ) .'</a>';
+    echo '<a href="#" class="button button-primary cs-icon-add">'. esc_html__( 'Add Icon', 'vibranium' ) .'</a>';
+    echo '<a href="#" class="button cs-warning-primary cs-icon-remove'. $hidden .'">'. esc_html__( 'Remove Icon', 'vibranium' ) .'</a>';
     echo '<input type="text" name="'. $this->element_name() .'" value="'. $value .'"'. $this->element_class( 'cs-icon-value' ) . $this->element_attributes() .' />';
     echo '</div>';
 
-    echo $this->element_after();
+    echo esc_attr( $this->element_after() );
 
   }
 
